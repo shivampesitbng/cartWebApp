@@ -95,9 +95,15 @@ function home() {
 					}
 					$("#show-cart").html(output);
 					$("#total-cart").html(shoppingCart.totalCart());
+					
 					var disc = 0;
+					
+					var disc = parseInt(localStorage.getItem('discf'));
+						
+						//console.log(disc);
+					
 					$("#disc").html(disc);
-					$("#discounttotal").html(shoppingCart.totalCart());
+					$("#discounttotal").html(shoppingCart.totalCart()-disc);
 					
 					
 					
