@@ -53,6 +53,7 @@
 					<div  align="center" >--- Payment Methods --- </div>
 				</div>
 				<div  style="float:right;" ><button onclick="confirmfinal()" class = "button" >Confirm Order</button></div>
+			<b><div id="oplaced" align="right" style="margin-top:25px"></div></b>
 			</div>
 			
 			<div class="col-sm-2" ></div>
@@ -114,10 +115,7 @@
 					$("#show-cart").html(output);
 					$("#total-cart").html(shoppingCart.totalCart());
 					var disc = 0;
-					saveData(disc);
-					function saveData() {
-							localStorage.setItem('discf', disc);
-						}
+					
 					$("#disc").html(disc);
 					$("#discounttotal").html(shoppingCart.totalCart());
 					
@@ -402,7 +400,7 @@
 						//document.getElementById("minord").innerHTML = "min order is 200";
 					}
 					else{
-						location.href = "#confirmfinal";
+						document.getElementById("oplaced").innerHTML = "Thanks ! Order Placed";
 					}
 					
 				
@@ -416,10 +414,7 @@
 						
 						//new cart total
 						disc = 50;
-						saveData(disc);
-						function saveData() {
-							localStorage.setItem('discf', disc);
-						}
+						
 						document.getElementById("coupon").innerHTML = "valid";
 						$("#disc").html(disc);
 						$("#discounttotal").html(shoppingCart.totalCart()-disc);
@@ -432,10 +427,7 @@
 						
 						//new cart total
 						disc = 100;
-						saveData(disc);
-						function saveData() {
-							localStorage.setItem('discf', disc);
-						}
+						
 						document.getElementById("coupon").innerHTML = "valid";
 						saveData(disc);
 						
@@ -447,10 +439,7 @@
 					else if( (x === "coupon1" || x==="coupon2") &&  shoppingCart.totalCart()<300){
 						
 						disc = 0;
-						saveData(disc);
-						function saveData() {
-							localStorage.setItem('discf', disc);
-						}
+						
 						document.getElementById("coupon").innerHTML = " Min Ord to Avail thi coup is Rs 300";
 						
 						$("#disc").html(disc);
@@ -459,10 +448,7 @@
 					}
 					else {
 					disc= 0;
-					saveData(disc);
-					function saveData() {
-							localStorage.setItem('discf', disc);
-						}
+				
 						document.getElementById("coupon").innerHTML = " Invalid Coupon";
 						$("#disc").html(disc);
 						$("#discounttotal").html(shoppingCart.totalCart());
