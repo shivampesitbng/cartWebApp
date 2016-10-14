@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
-			<h1  style="text-align: center;display:block;" > Check Cart & Address | Payment </h1>
-			<h1  style="text-align: center;display:none;" > Acknowledgement | Order Placed</h1>
+			<h1  style="text-align: center;display:block;" id="b1"> Check Cart & Address | Payment </h1>
+			<h1  style="text-align: center;display:none;" id="b2"> Acknowledgement | Order Placed</h1>
 			<div class="row">
 				<div class="col-sm-2" ></div>
 				
@@ -33,7 +33,7 @@
 					</div>
 					
 
-					<div style="margin-top:56px;display:block;" >
+					<div  id="b3" style="margin-top:56px;display:block;" >
 					<p align="right" >Hints : Coupon Applicable on &#x20b9; 300 & Above</p>
 					<p align="right"> Enter "coupon1" For &#x20b9; 50 Discount</p>
 					<p align="right"> Enter "coupon2" For &#x20b9; 100 Discount</p>
@@ -46,13 +46,13 @@
 				
 				<div class="col-sm-4">
 				
-					<div style="box-shadow: 3px 3px 10px #888888;min-height:400px">
+					<div style="box-shadow: 3px 3px 10px #888888;height:397px">
 						<div  align="center" >--- Payment Methods --- </div>
 					</div>
 						
-					<div  id="b1" style="float:right;display:block;" ><button onclick="confirmfinal()" class = "button" >Confirm Order</button></div>
+					<div  id="b5" style="float:right;display:block;" ><button onclick="confirmfinal()" class = "button" >Confirm Order</button></div>
 						
-					<div  id="b2" style="float:right;display:none;" ><button onclick="hom()" class = "button" >Order Again</button></div>
+					<div  id="b4" style="float:right;display:none;" ><button onclick="hom()" class = "button" >Order Again</button></div>
 					
 					<b><div id="oplaced" align="right" style="margin-top:25px"></div></b>
 				</div>
@@ -409,11 +409,13 @@
 						hide();
 						function hide() { 
 						
+							
 							document.getElementById('coup').style.display='none'; 
 							
-							if(document.getElementById('b1').style.display=='block') { 
-								document.getElementById('b1').style.display='none'; 
-							} 
+							document.getElementById('b1').style.display='none'; 
+							document.getElementById('b3').style.display='none'; 
+							document.getElementById('b5').style.display='none'; 
+							
 							
 							 
 							
@@ -421,9 +423,10 @@
 						} 
 						show();
 						function show(){
-							if(document.getElementById('b2').style.display=='none') { 
-								document.getElementById('b2').style.display='block'; 
-							}
+						
+								document.getElementById('b2').style.display='block';
+								document.getElementById('b4').style.display='block';								
+							
 							
 						}
 						
