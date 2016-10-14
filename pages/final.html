@@ -21,7 +21,7 @@
 					</div>
 					<!--coupon-->
 					
-						<div style="float:right;">
+						<div id="coup" style="float:right;">
 							<input id="string" >
 						<button type="button" class = "button" onclick="coupon()">Add Coupon</button>
 						<p  align= "right" id="coupon"></p>
@@ -52,7 +52,11 @@
 				<div style="box-shadow: 3px 3px 10px #888888;min-height:400px">
 					<div  align="center" >--- Payment Methods --- </div>
 				</div>
-				<div  style="float:right;" ><button onclick="confirmfinal()" class = "button" >Confirm Order</button></div>
+				
+				<div  id="b1" style="float:right;display:block;" ><button onclick="confirmfinal()" class = "button" >Confirm Order</button></div>
+				
+				<div  id="b2" style="float:right;display:none;" ><button onclick="hom()" class = "button" >Order Again</button></div>
+			
 			<b><div id="oplaced" align="right" style="margin-top:25px"></div></b>
 			</div>
 			
@@ -67,7 +71,9 @@
 				
 			
 			<script>		
-				
+				function hom(){
+					location.href="#";
+				}
 				
 				$(".add-to-cart").click(function(event){
 					event.preventDefault(); //Wont jump to Top of page On click
@@ -400,7 +406,23 @@
 						//document.getElementById("minord").innerHTML = "min order is 200";
 					}
 					else{
+						
 						document.getElementById("oplaced").innerHTML = "Thanks ! Order Placed";
+						
+						hide();
+						function hide() { 
+						
+							document.getElementById('coup').style.display='none'; 
+							
+							if(document.getElementById('b1').style.display=='block') { 
+								document.getElementById('b1').style.display='none'; 
+							} 
+							
+							if(document.getElementById('b2').style.display=='none') { 
+								document.getElementById('b2').style.display='block'; 
+							} 
+						} 
+						
 					}
 					
 				
