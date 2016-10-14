@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
-			<h1  style="text-align: center;"> Check Cart & Address | Payment </h1>
-			
+			<h1  style="text-align: center;display:block;" id="b1"> Check Cart & Address | Payment </h1>
+			<h1 id="b2" style="text-align: center;display:none;" > Acknowledgement | Order Placed</h1>
 			<div class="row">
 				<div class="col-sm-2" ></div>
 				
@@ -10,64 +10,61 @@
 				<!-- CART -->
 				<div  class="col-sm-4"  >
 					<div style="box-shadow: 3px 3px 10px #888888;">
-					<div style="background-color:lavenderblush;"><button class = "button" style="background-color:#8a6d3b;" onclick="back()" ><-</button> YOUR CART<!--button class = "button" style="float: right;background-color:#8a6d3b;" id = "clear-cart">Clear Cart</button--></div>
-					<div align="center" style="background-color:lavenderblush;height:116.1px;overflow: scroll;overflow-x: hidden;min-width:100%;">
-						<ul id="show-cart" ></ul>
+						<div style="background-color:lavenderblush;">
+							<button class = "button" style="background-color:#8a6d3b;" onclick="back()" ><-</button> 
+							YOUR CART<!--button class = "button" style="float: right;background-color:#8a6d3b;" id = "clear-cart">Clear Cart</button-->
+						</div>
+						<div align="center" style="background-color:lavenderblush;height:116.1px;overflow: scroll;overflow-x: hidden;min-width:100%;">
+							<ul id="show-cart" ></ul>
+						</div>
+						<div  style="background-color:lavenderblush;">Total: &#x20b9; <span id="total-cart"></span>
+							<!--button onclick="confirmfinal()" class = "button" style="float: right;">Checkout</button-->
+						</div>
+						<div style="background-color:lavenderblush;">Discount: &#x20b9; <span id="disc"></span></div>
+						<div style="background-color:lavenderblush;">Total (After Discount): &#x20b9; <span id="discounttotal"></span></div>
+						<div style="background-color:orange;" id="minord"></div>
 					</div>
-					<div  style="background-color:lavenderblush;">Total: &#x20b9; <span id="total-cart"></span><!--button onclick="confirmfinal()" class = "button" style="float: right;">Checkout</button--></div>
-					<div style="background-color:lavenderblush;">Discount: &#x20b9; <span id="disc"></span></div>
-					<div style="background-color:lavenderblush;">Total (After Discount): &#x20b9; <span id="discounttotal"></span></div>
-					<div style="background-color:orange;" id="minord"></div>
-					</div>
-					<!--coupon-->
 					
-						<div id="coup" style="float:right;">
-							<input id="string" >
+					<!--coupon-->
+					<div id="coup" style="float:right;">
+						<input id="string" >
 						<button type="button" class = "button" onclick="coupon()">Add Coupon</button>
 						<p  align= "right" id="coupon"></p>
-						
-						
-						</div>
+					</div>
 					
 
-						<div style="margin-top:56px;">
+					<div style="margin-top:56px;display:block;" id="b1">
+					<p align="right" >Hints : Coupon Applicable on &#x20b9; 300 & Above</p>
+					<p align="right"> Enter "coupon1" For &#x20b9; 50 Discount</p>
+					<p align="right"> Enter "coupon2" For &#x20b9; 100 Discount</p>
+					</div>
 						
-							<p align="right">Hints : Coupon Applicable on &#x20b9; 300 & Above</p>
-							<p align="right"> Enter "coupon1" For &#x20b9; 50 Discount</p>
-							<p align="right"> Enter "coupon2" For &#x20b9; 100 Discount</p>
-							
-							
-					
-						</div>
-						<div align="center" style="box-shadow: 3px 3px 10px #888888;height:200px;">
-								<p> ---Display Entered Address ( Review Purpose )--- </p>
-							</div>
-					
-					
-					
+					<div align="center" style="box-shadow: 3px 3px 10px #888888;height:200px;">
+						<p > ---Display Entered Address ( Review Purpose )--- </p>
+					</div>
 				</div>
 				
 				<div class="col-sm-4">
 				
-				<div style="box-shadow: 3px 3px 10px #888888;min-height:400px">
-					<div  align="center" >--- Payment Methods --- </div>
+					<div style="box-shadow: 3px 3px 10px #888888;min-height:400px">
+						<div  align="center" >--- Payment Methods --- </div>
+					</div>
+						
+					<div  id="b1" style="float:right;display:block;" ><button onclick="confirmfinal()" class = "button" >Confirm Order</button></div>
+						
+					<div  id="b2" style="float:right;display:none;" ><button onclick="hom()" class = "button" >Order Again</button></div>
+					
+					<b><div id="oplaced" align="right" style="margin-top:25px"></div></b>
 				</div>
-				
-				<div  id="b1" style="float:right;display:block;" ><button onclick="confirmfinal()" class = "button" >Confirm Order</button></div>
-				
-				<div  id="b2" style="float:right;display:none;" ><button onclick="hom()" class = "button" >Order Again</button></div>
 			
-			<b><div id="oplaced" align="right" style="margin-top:25px"></div></b>
-			</div>
-			
-			<div class="col-sm-2" ></div>
+				<div class="col-sm-2" ></div>
 			
 			
 			</div>
 			
 			
 			
-			
+</div>			
 				
 			
 			<script>		
@@ -421,6 +418,8 @@
 							if(document.getElementById('b2').style.display=='none') { 
 								document.getElementById('b2').style.display='block'; 
 							} 
+							
+							
 						} 
 						
 					}
